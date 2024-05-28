@@ -1,20 +1,8 @@
 body {
+    margin: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     align-items: center;
-}
-
-a {
-    text-decoration: none;
-    color: firebrick;
-}
-
-headerContainer {
-    font-size: larger;
-    background-color: white;
-    display: flex;
-    margin-top: auto;
-    margin-bottom: 10px;
 }
 
 .authorList {
@@ -23,9 +11,33 @@ headerContainer {
     margin-bottom: 40px;
 }
 
-.btn {
+.refs {
+    text-decoration: none;
+    color: firebrick;
+}
+
+.buttonOrder {
+    margin-bottom: 50px;
+}
+
+.btns {
     border-radius: 20px;
     border-color: firebrick;
     background-color: firebrick;
     color: white;
 }
+
+
+.abstract {
+    display: block;
+}
+
+.abstract_text {
+    margin: auto;
+    width: 55%;
+    align-items: center;
+    text-align: justify;
+    text-indent: 30px;
+    text-justify: inter-word;
+}
+

@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fr&#233;chet Wavelet Distance</title>
+    <title>Fréchet Wavelet Distance</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
+    <!-- (A) LOAD THE MATHJAX LIBRARY -->
+<!-- DOCS: https://docs.mathjax.org/en/latest/basic/mathematics.html -->
+<!-- DEMO: https://github.com/mathjax/MathJax-demos-web -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <!-- Bootstrap Font Icon CSS -->
@@ -17,24 +21,51 @@
 
     <div class="container-sm">
         <div class="headerContainer">
-            <h1>Fr&#233;chet Wavelet Distance</h1>
+            <h1>Fréchet Wavelet Distance</h1>
             <h3>A Domain-Agnostic Metric for Image Generation</h3>
         </div>
         <div class="authorList">
-            <a href="https://lokiv.dev/">Lokesh Veeramacheneni</a><sup>1</sup>&emsp;
-            <a href="https://www.wolter.tech/">Moritz Wolter</a><sup>1</sup>&emsp;
-            <a href="https://hildekuehne.github.io/">Hilde Kuehne</a><sup>1,2</sup>&emsp;
-            <a href="https://pages.iai.uni-bonn.de/gall_juergen/">Juergen Gall</a><sup>1</sup><br>
+            <a href="https://lokiv.dev/" class="refs">Lokesh Veeramacheneni</a><sup>1</sup>&emsp;
+            <a href="https://www.wolter.tech/" class="refs">Moritz Wolter</a><sup>1</sup>&emsp;
+            <a href="https://hildekuehne.github.io/" class="refs">Hilde Kuehne</a><sup>1,2</sup>&emsp;
+            <a href="https://pages.iai.uni-bonn.de/gall_juergen/" class="refs">Juergen Gall</a><sup>1</sup><br>
             <sup>1</sup>University of Bonn&emsp;<sup>2</sup>Goethe University Frankfurt, MIT-IBM Watson AI Lab
         </div>
         <div class="buttonOrder">
-            <a class="btn btn-primary" href="https://arxiv.org/pdf/2312.15289" role="button"><i class="bi bi-file-earmark-pdf-fill"></i> paper</a>
+            <a class="btn btns" href="https://arxiv.org/pdf/2312.15289" role="button"><i class="bi bi-file-earmark-pdf-fill"></i> paper</a>
             &nbsp;
-            <a class="btn btn-primary" href="https://github.com/Uni-Bonn-Attention-Research/frechet_wavelet_distance" role="button"><i class="bi bi-github"></i> code</a>
+            <a class="btn btns" href="https://github.com/Uni-Bonn-Attention-Research/frechet_wavelet_distance" role="button"><i class="bi bi-github"></i> code</a>
             &nbsp;
-            <a class="btn btn-primary" href="https://github.com/Uni-Bonn-Attention-Research/frechet_wavelet_distance" role="button"><i class="bi bi-box"></i> pip</a>
+            <a class="btn btns" href="#" role="button"><i class="bi bi-box"></i> pip</a>
         </div>
     </div>
+
+    <div class="container-sm">
+        <div class="abstract">
+            <h3>Abstract</h3><br>
+            <div class="abstract_text">
+                <p>
+                    Modern metrics for generative learning like Fréchet Inception Distance (FID)
+                    demonstrate impressive performance. However, they suffer from various shortcomings, like a bias towards specific generators and datasets.
+                </p>
+                <p>
+                    To address this problem, we propose the Fréchet Wavelet Distance (FWD) as a domain-agnostic metric
+                    based on Wavelet Packet Transform \(\mathcal{W}_p\). FWD provides a sight across a broad
+                    spectrum of frequencies in images with a high resolution, along with preserving
+                    both spatial and textural aspects. Specifically, we use \(\mathcal{W}_p\) to project generated and
+                    dataset images to packet coefficient space. Further, we compute Fréchet distance
+                    with the resultant coefficients to evaluate the quality of a generator.
+                </p>
+                <p>
+                    This metric is general-purpose and dataset-domain agnostic, as it does not rely on any pretrained
+                    network while being more interpretable because of frequency band transparency.
+                    We conclude with an extensive evaluation of a wide variety of generators across various datasets that the proposed FWD is able to generalize and improve robustness
+                    to domain shift and various corruptions compared to other metrics.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
