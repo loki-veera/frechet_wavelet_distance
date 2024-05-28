@@ -1,5 +1,6 @@
 body {
     margin: auto;
+    width: 58%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     align-items: center;
@@ -27,14 +28,27 @@ body {
     color: white;
 }
 
+.introImage {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 .abstract {
+    margin-top: 10px;
     display: block;
+    margin-bottom: 10px;
+}
+
+figcaption {
+    margin: auto;
+    width: 70.6%;
+    font: italic x-small sans-serif;
+    align-items: center;
+    text-align: justify;
 }
 
 .abstract_text {
     margin: auto;
-    width: 55%;
     align-items: center;
     text-align: justify;
     text-indent: 30px;
