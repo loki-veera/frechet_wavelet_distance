@@ -56,26 +56,104 @@
 
     <div class="container-sm">
         <div class="abstract">
-            <h2>Abstract</h2><br>
+            <h2 class="sechead">Abstract</h2><br>
             <div class="abstract_text">
                 <p>
                     Modern metrics for generative learning like Fréchet Inception Distance (FID)
                     demonstrate impressive performance. However, they suffer from various shortcomings, like a bias towards specific generators and datasets.
-                </p>
-                <p>
+                <!-- </p>
+                <p> -->
                     To address this problem, we propose the Fréchet Wavelet Distance (FWD) as a domain-agnostic metric
                     based on Wavelet Packet Transform \(\mathcal{W}_p\). FWD provides a sight across a broad
                     spectrum of frequencies in images with a high resolution, along with preserving
                     both spatial and textural aspects. Specifically, we use \(\mathcal{W}_p\) to project generated and
                     dataset images to packet coefficient space. Further, we compute Fréchet distance
                     with the resultant coefficients to evaluate the quality of a generator.
-                </p>
-                <p>
+                <!-- </p>
+                <p> -->
                     This metric is general-purpose and dataset-domain agnostic, as it does not rely on any pretrained
                     network while being more interpretable because of frequency band transparency.
                     We conclude with an extensive evaluation of a wide variety of generators across various datasets that the proposed FWD is able to generalize and improve robustness
                     to domain shift and various corruptions compared to other metrics.
                 </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-sm">
+        <div class="secmethod">
+            <h2 class="sechead">Fréchet Wavelet Distance</h2>
+            <div class="methodImage">
+                <figure>
+                    <img src="images/methodology_img_compressed-1.png" alt="FWD Image" style='height: 100%; width: 100%; object-fit: contain'/>
+                    <figcaption>
+                        Fréchet Wavelet Distance (FWD) computation flow-chart. \(\mathcal{W}_p\) denotes the wavelet-packet
+                        transform. Not all packet coefficients are shown, dashed lines indicate omissions. We compute
+                        individual Fréchet Distances for each frequency band.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="abstract_text">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-sm">
+        <div class="results">
+            <h2 class="sechead">Results</h2>
+            <div class="resultImage1">
+                <figure>
+                    <img src="images/imagenetbias_imgs.png" alt="inet_bias_imgs" style='height: 70%; width: 70%; object-fit: contain'/>
+                    <figcaption>
+                        Uncurated samples from (a) Proj. FastGAN, (b) DDGAN models on CelebA-HQ dataset.
+                        (c) and (d) represent samples from both the models on DNDD-Dataset respectively. The FID ranking
+                        fluctuates, whereas our metric (FWD) provides a consistent ranking irrespective of the dataset.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="resultImage2">
+                <figure>
+                    <img src="images/imagenetbias_table.png" alt="inet_bias_table" style='height: 100%; width: 100%; object-fit: contain'/>
+                    <figcaption>
+                        Comparison of biased and unbiased Frèchet distances. FID denotes the standard formulation
+                        using an InceptionV3 trained on ImageNet. To eliminate the imagenet bias we re-trained InceptionV3.
+                        The FID (CelebA) and FID (DNDD-Dataset) columns list the distances measured using the retrained
+                        networks as a backbone. We find that re-training is possible only for large datasets where sufficient
+                        data is available. FWD consistently provides a meaningful metric.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="abstract_text">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-sm">
+        <div class="install">
+            <h4 class="sechead">I want to use FWD for my evaluations, but how?</h4>
+            <div class="code_install">
+                &emsp;pip install _____ <br>
+                &emsp;python -m _____ &lt;path_to_original_images&gt; &lt;path_to_generated_images&gt;
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-sm">
+        <div class="citation">
+            <h2 class="sechead">Citation</h2>
+            <div class="abstract_text" align="left">
+                If you use our work for evaluation, please cite using following bibtex entry
+            </div>
+            <div class="code_install">
+                @article{key, <br>
+                    author    = {Veeramacheneni, Lokesh and Wolter, Moritz and Kuehne, Hilde and Gall, Juergen} <br>
+                    title     = {Fréchet Wavelet Distance: A Domain-Agnostic Metric for Image Generation}, <br>
+                    journal   = {update}, <br>
+                    year      = {2024}, <br>
+                  }
             </div>
         </div>
     </div>

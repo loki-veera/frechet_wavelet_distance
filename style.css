@@ -1,7 +1,8 @@
 body {
     margin: auto;
-    width: 58%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 55%;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: monospace;
     text-align: center;
     align-items: center;
 }
@@ -33,21 +34,55 @@ body {
     margin-bottom: 50px;
 }
 
+.methodImage {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.resultImage1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.resultImage2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .abstract {
-    margin-top: 10px;
+    margin-top: 5px;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.secmethod {
+    margin-top: 50px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.results {
+    margin-top: 50px;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.sechead {
+    text-align: left;
 }
 
 figcaption {
     margin: auto;
+    margin-top: 5px;
     width: 70.6%;
-    font: italic x-small sans-serif;
+    /* font: italic x-small sans-serif; */
+    font: italic x-small monospace;
     align-items: center;
     text-align: justify;
 }
 
 .abstract_text {
+    font-size: small;
     margin: auto;
     align-items: center;
     text-align: justify;
@@ -55,3 +90,15 @@ figcaption {
     text-justify: inter-word;
 }
 
+.code_install {
+    font-size: medium;
+    border-radius: 20px;
+    font: italic bold monospace;
+    background-color: lightgray;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: left;
+    text-align: left;
+}
