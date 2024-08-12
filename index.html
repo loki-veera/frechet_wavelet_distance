@@ -102,7 +102,7 @@
     <div class="container-sm">
         <div class="results">
             <h2 class="sechead">Results</h2>
-            <div class="resultImage1">
+            <!-- <div class="resultImage1">
                 <figure>
                     <img src="images/imagenetbias_imgs.png" alt="inet_bias_imgs" style='height: 70%; width: 70%; object-fit: contain'/>
                     <figcaption>
@@ -111,7 +111,7 @@
                         fluctuates, whereas our metric (FWD) provides a consistent ranking irrespective of the dataset.
                     </figcaption>
                 </figure>
-            </div>
+            </div> -->
             <div class="resultImage2">
                 <figure>
                     <img src="images/imagenetbias_table.png" alt="inet_bias_table" style='height: 100%; width: 100%; object-fit: contain'/>
@@ -132,12 +132,28 @@
 
     <div class="container-sm">
         <div class="install">
-            <h4 class="sechead">I want to use FWD for my evaluations, but how?</h4>
+            <h2 class="sechead">Use FWD</h2>
             <div class="code_install">
                 &emsp;pip install pytorchfwd <br>
                 &emsp;python -m pytorchfwd &lt;path_to_original_images&gt; &lt;path_to_generated_images&gt;
             </div>
-
+            <h4 class="sechead">Options</h4>
+            <div class="code_install">
+                python -m pytorchfwd --help <br>
+                <br>usage: pytorchfwd.py [-h] [--batch-size BATCH_SIZE] [--num-processes NUM_PROCESSES] [--save-packets] [--wavelet WAVELET] [--max_level MAX_LEVEL] [--log_scale] [--deterministic] path path <br>
+                <br>positional arguments:<br>
+                path                  Path to the generated images or path to .npz statistics file.<br>
+                <br>
+                options:<br>
+                -h, --help            show this help message and exit<br>
+                --batch-size          Batch size for wavelet packet transform. (default: 128)<br>
+                --num-processes       Number of multiprocess. (default: None)<br>
+                --save-packets        Save the packets as npz file. (default: False)<br>
+                --wavelet             Choice of wavelet. (default: sym5)<br>
+                --max_level           wavelet decomposition level (default: 4)<br>
+                --log_scale           Use log scaling for wavelets. (default: False)<br>
+                --deterministic       Set PyTorch to deterministic mode, for perfect reproducability. (default: False)<br>
+            </div>
         </div>
     </div>
 
@@ -149,13 +165,13 @@
             </div>
             <div class="code_install">
                 @misc{veeramacheneni2024fwd,
-                   title={Fr\'echet Wavelet Distance: A Domain-Agnostic Metric for Image Generation},
-                   author={Lokesh Veeramacheneni and Moritz Wolter and Hildegard Kuehne and Juergen Gall},
-                   year={2024},
-                   eprint={2312.15289},
-                   archivePrefix={arXiv},
-                   primaryClass={cs.CV},
-                   url={https://arxiv.org/abs/2312.15289},
+                   title={Fr\'echet Wavelet Distance: A Domain-Agnostic Metric for Image Generation}, <br>
+                   author={Lokesh Veeramacheneni and Moritz Wolter and Hildegard Kuehne and Juergen Gall}, <br>
+                   year={2024}, <br>
+                   eprint={2312.15289}, <br>
+                   archivePrefix={arXiv}, <br>
+                   primaryClass={cs.CV}, <br>
+                   url={https://arxiv.org/abs/2312.15289},<br>
                 }
             </div>
         </div>
