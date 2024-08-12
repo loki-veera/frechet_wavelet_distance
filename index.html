@@ -29,7 +29,7 @@
             <a href="https://www.wolter.tech/" class="refs">Moritz Wolter</a><sup>1</sup>&emsp;
             <a href="https://hildekuehne.github.io/" class="refs">Hilde Kuehne</a><sup>1,2</sup>&emsp;
             <a href="https://pages.iai.uni-bonn.de/gall_juergen/" class="refs">Juergen Gall</a><sup>1</sup><br>
-            <sup>1</sup>University of Bonn&emsp;<sup>2</sup>Goethe University Frankfurt, MIT-IBM Watson AI Lab
+            <sup>1</sup>University of Bonn&emsp;<sup>2</sup>University of Tübingen, MIT-IBM Watson AI Lab
         </div>
         <div class="buttonOrder">
             <a class="btn btns" href="https://arxiv.org/pdf/2312.15289" role="button"><i class="bi bi-file-earmark-pdf-fill"></i> paper</a>
@@ -94,7 +94,31 @@
                 </figure>
             </div>
             <div class="abstract_text">
+                <p>
+                    We propose the Fréchet Wavelet Distance (FWD) to tackle the dataset-domain bias which inturn leverages Wavelet Packet Transform \(\mathcal{W}_p\).
+                    In a nutshel, \(\mathcal{W}_p\) constructs a  tree of images by recursively convolving with the predefined filters. Example of wavelet packet transform is depicted in the below figure.
+                    More details about the \(\mathcal{W}_p\) is found in Section:3 of the paper.
+                </p>
+            </div>
+            <div class="methodImage">
+                <figure>
+                    <img src="images/lecun.png" alt="Packet transforms image" style='height: 100%; width: 100%; object-fit: contain'/>
+                    <figcaption>
+                        Illustration of the wavelet packet transform \(\mathcal{W}_p\). For visualization purpose, we depict recursion upto level 3. All the experiments in the paper are conducted with level 4 transform with Haar wavelet.
+                    </figcaption>
+                </figure>
+            </div>
 
+            <div class="abstract_text">
+                <p>
+                    The metric is computed in three steps. First, we compute the individual packet mean for the set of images
+                    $$\mu_p(I_N) = \frac{1}{N} \sum_{n=1}^{N} \mathcal{W}(I_n)_p$$
+                    with \(I_n\) being the \(n^{th}\) image in the dataset and p represent the corresponding packet from P packets. Then we compute the covariance matrix
+                    $$\Sigma_p(I_n) = \frac{1}{N-1}\sum_{n=1}^{N}(\mathcal{W}(I_n)_p - \mu_p(I_N))(\mathcal{W}(I_n)_p - \mu_p(I_N))^T$$
+                    Finally we compute the mean Fréchet distance across all packets.
+                    $$FWD = \frac{1}{P}\sum_{p=1}^P ||\mu_{r_p} - \mu_{g_p}||_2^2 + \text{Tr}[\Sigma_{r_p} + \Sigma_{g_p} - 2\sqrt{\Sigma_{r_p}\Sigma_{g_p}}]$$
+                    By averaging the distances of all frequency bands, the FWD captures frequency information across the spectrum.
+                </p>
             </div>
         </div>
     </div>
